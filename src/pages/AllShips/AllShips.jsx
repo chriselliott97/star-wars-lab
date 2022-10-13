@@ -23,33 +23,33 @@ const AllShips = () => {
   const handleNextButton = () => {
     if(pageNumber < Math.ceil(shipData.count/10))
     setPageNumber(pageNumber + 1)
+    console.log(pageNumber)
   }
 
   return (
     <>
-      {starShips.length ? <>
-        <div className="nav-buttons">
-          <button onClick={handlePrevButton}>Prev</button>
-          <button onClick={handleNextButton}>Next</button>
-        </div>
-        <div className="nav-buttons">
-        <p>Page: {pageNumber} of {Math.ceil(shipData.count/10)}</p>
-        </div>
-        <div className="icon-container">
-          {starShips.map(starship =>
-            <Link to='/starship' state={{ starship }} key={starship.name}>
-              <div className="class-div">
-                {starship.name}
-              </div>
-            </Link>
-          )}
-        </div>
-      </>
+      {starShips.length ? 
+        <>
+          <div className="nav-buttons">
+            <button onClick={handlePrevButton}>Prev</button>
+            <button onClick={handleNextButton}>Next</button>
+          </div>
+          <div className="nav-buttons">
+          <p>Page: {pageNumber} of {Math.ceil(shipData.count/10)}</p>
+          </div>
+          <div className="icon-container">
+            {starShips.map(starship =>
+              <Link to='/starship' state={{ starship }} key={starship.name}>
+                <div className="class-div">
+                  {starship.name}
+                </div>
+              </Link>
+            )}
+          </div>
+        </>
         :
-        <div className="loading-text">Loading...</div>
+        <div className="loading-text">Loading All Ships...</div>
       }
-
-
     </>
   );
 }
