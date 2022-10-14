@@ -23,8 +23,8 @@ const ShipDetails = () => {
           <p>MODEL: {shipDetails.model}</p>
           <Link to={'/'}><p>RETURN</p></Link>
         </div> :
-        <div className="loading-text">Loading...</div>
-  }
+        <div className="loading-text">Loading Starships Details...</div>
+    }
 
     </>
   );

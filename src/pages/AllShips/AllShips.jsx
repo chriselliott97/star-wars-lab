@@ -48,7 +48,7 @@ const AllShips = () => {
           </div>
         </>
         :
-        <div className="loading-text">Loading All Ships...</div>
+        <div className="loading-text">Loading All Starships...</div>
       }
     </>
   );
